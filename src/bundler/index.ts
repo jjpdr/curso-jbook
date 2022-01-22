@@ -1,6 +1,7 @@
 import * as esbuild from "esbuild-wasm";
 import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
 import { fetchPlugin } from "./plugins/fetch-plugin";
+import { isJsxFragment } from "typescript";
 
 let service: esbuild.Service;
 
@@ -23,6 +24,8 @@ export default async (rawCode: string) => {
                 "process.env.NODE_ENV": '"production"',
                 global: "window",
             },
+            jsxFactory: "_React.createElement",
+            jsxFragment: "_React.Fragment",
         });
 
         return {
