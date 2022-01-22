@@ -15,6 +15,12 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     const bundle = useTypedSelector((state: any) => state.bundles[cell.id]);
 
     useEffect(() => {
+        //First time page is loaded
+        if (!bundle) {
+            createBundle(cell.id, cell.content);
+            return;
+        }
+
         const timer = setTimeout(async () => {
             createBundle(cell.id, cell.content);
         }, 777);
