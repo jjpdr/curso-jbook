@@ -1,13 +1,12 @@
-.proress-wrapper {
-    background-color: #fff;
+.progress-wrapper {
     height: 100%;
     flex-grow: 1;
+    background-color: white;
 }
 
 .progress-cover {
     height: 100%;
     width: 100%;
-    background-color: #fff;
     display: flex;
     align-items: center;
     padding-left: 10%;
@@ -19,11 +18,9 @@
     0% {
         opacity: 0;
     }
-
     50% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
